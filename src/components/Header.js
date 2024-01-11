@@ -40,28 +40,24 @@ const Header = () => {
     });
 },[]);
 
-  return (
+   return (
     
-    <div className='fixed px-8 py-2 bg-gradient-to-b from-black  z-10 
-        w-screen flex justify-between'>
+    <div className='fixed w-screen  px-8 py-1 bg-gradient-to-b from-black  z-10 
+        flex justify-between'>
         <img
-        className='w-44 ml-6 mt-5 bg-gradient-to-b from-black'
+        className='w-36 ml-6 mt-5 '
          src={netflixLogo}
         alt='netfilxlogo' />
         
-          
-          <div className='flex p-2'>
-            <img className='w-12 h-12'
-             src={userIcon}
-              alt='usericon' />
-            <button onClick={handleSignOut} className='font-bold text-white'>(Sign Out)
-         </button>     
-          </div> 
-         
-          
-     </div>
+          {user && (
+            <div className='flex p-2'>
+              <img className='w-10 h-10'src={userIcon} alt='usericon' />
+                 <button onClick={handleSignOut} className='font-bold text-white '>(Sign Out) </button>     
+            </div> 
+          )}
+    </div>
   );
-};
+ };
 
 
 export default Header
